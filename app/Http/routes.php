@@ -14,3 +14,23 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/helper_collection', [
+    'uses' => 'TestController@helperCollection',
+    'as' => 'helper_collection'
+]);
+
+Route::get('/class_collection', [
+    'uses' => 'TestController@classCollection',
+    'as' => 'class_collection'
+]);
+
+Route::get('/users', [
+    'uses' => 'TestController@getUsers',
+    'as' => 'users'
+]);
+
+Route::get('/first_user', [
+    'uses' => 'TestController@firstUser',
+    'as' => 'first_user'
+]);
