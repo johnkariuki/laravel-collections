@@ -45,3 +45,8 @@ Route::get('/where', [
     'uses' => 'TestController@where',
     'as' => 'where'
 ]);
+
+Route::get('/filter', [
+    'uses' => 'TestController@filter',
+    'as' => 'filter'
+]);

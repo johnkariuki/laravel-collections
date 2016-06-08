@@ -85,4 +85,19 @@ class TestController extends Controller
         //collection of user with an id of 1, age 51
         //and named Chasity Tillman
     }
+
+    /**
+     * Use the filter method to get a list of all the users that
+     * are below the age of 35.
+     */
+    public function filter()
+    {
+        $users = User::all();
+        $youngsters = $users->filter(function ($user, $key) {
+            return $user->age < 35;
+        });
+
+        $youngsters->all();
+        //list of all users that are below the age of 35
+    }
 }
