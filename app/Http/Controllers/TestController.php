@@ -65,4 +65,24 @@ class TestController extends Controller
             //true
         });
     }
+
+    /**
+     * Use the where method to find data that matches a given
+     * criteria.
+     *
+     * Chain the methods for fine-tuned criteria
+     */
+    public function where()
+    {
+        $users = User::all();
+        $user = $users->where('id', 2);
+        //Collection of user with an ID of 2
+
+        $user = $users->where('id', 1)
+                      ->where('age', '51')
+                      ->where('name', 'Chasity Tillman');
+
+        //collection of user with an id of 1, age 51
+        //and named Chasity Tillman
+    }
 }

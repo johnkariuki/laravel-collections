@@ -39,3 +39,9 @@ Route::get('/contains', [
     'uses' => 'TestController@contains',
     'as' => 'contains'
 ]);
+
+
+Route::get('/where', [
+    'uses' => 'TestController@where',
+    'as' => 'where'
+]);
