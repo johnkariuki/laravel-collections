@@ -42,4 +42,27 @@ class TestController extends Controller
         $user = User::first();
         dd($user->name);
     }
+
+    /**
+     * Check if a collection contains a given key value pair
+     * value or callback parameter
+     *
+     * @return true or false
+     */
+    public function contains()
+    {
+        $users = User::all();
+        $users->contains('name', 'Chasity Tillman');
+        //true
+
+        $collection = collect(['name' => 'John', 'age' => 23]);
+        $collection->contains('Jane');
+        //false
+
+        $collection = collect([1, 2, 3, 4, 5]);
+        $collection->contains(function ($key, $value) {
+            return $value <= 5;
+            //true
+        });
+    }
 }

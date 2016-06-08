@@ -34,3 +34,8 @@ Route::get('/first_user', [
     'uses' => 'TestController@firstUser',
     'as' => 'first_user'
 ]);
+
+Route::get('/contains', [
+    'uses' => 'TestController@contains',
+    'as' => 'contains'
+]);
