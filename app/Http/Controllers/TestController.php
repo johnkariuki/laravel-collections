@@ -307,4 +307,19 @@ class TestController extends Controller
        ]
        */
     }
+
+    /**
+     * Return a list of very cool people in collection that
+     * are in the given array
+     */
+    public function intersect()
+    {
+        $coolPeople = collect([
+            1 => 'John', 2 => 'James', 3 => 'Jack'
+        ]);
+
+        $veryCoolPeople = $coolPeople->intersect(['Sarah', 'John', 'James']);
+        $veryCoolPeople->toArray();
+        //[1 => "John" 2 => "James"]
+    }
 }

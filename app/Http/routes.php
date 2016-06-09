@@ -90,3 +90,8 @@ Route::get('/union', [
     'uses' => 'TestController@union',
     'as' => 'union'
 ]);
+
+Route::get('/intersect', [
+    'uses' => 'TestController@intersect',
+    'as' => 'intersect'
+]);
