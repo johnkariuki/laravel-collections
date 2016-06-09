@@ -195,4 +195,24 @@ class TestController extends Controller
         ]
          */
     }
+
+    /**
+     * The take method returns n number of items in a collection.
+     * Given -n, it returns the last n items
+     */
+    public function takeMe()
+    {
+        $list = collect([
+            'Albert', 'Ben', 'Charles', 'Dan', 'Eric', 'Xavier', 'Yuri', 'Zane'
+        ]);
+
+        //Get the first two names
+        $firstTwo = $list->take(2);
+        //['Albert', 'Ben']
+
+        //Get the last two names
+        $lastTwo = $list->take(-2);
+        dd($lastTwo->toArray());
+        //['Yuri', 'Zane']
+    }
 }

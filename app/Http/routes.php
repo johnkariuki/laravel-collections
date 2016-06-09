@@ -60,3 +60,8 @@ Route::get('/grouping', [
     'uses' => 'TestController@grouping',
     'as' => 'grouping'
 ]);
+
+Route::get('/takeme', [
+    'uses' => 'TestController@takeMe',
+    'as' => 'takeme'
+]);
