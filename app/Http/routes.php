@@ -70,3 +70,13 @@ Route::get('/chunk', [
     'uses' => 'TestController@chunkMe',
     'as' => 'chunk'
 ]);
+
+Route::get('/map', [
+    'uses' => 'TestController@mapMe',
+    'as' => 'map'
+]);
+
+Route::get('/transform', [
+    'uses' => 'TestController@transformMe',
+    'as' => 'transform'
+]);

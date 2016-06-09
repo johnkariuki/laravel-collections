@@ -237,4 +237,39 @@ class TestController extends Controller
 
         return view('chunk', compact('list'));
     }
+
+    /**
+     * map function iterates a collection through a callback
+     * function and performs an operation on each value.
+     */
+    public function mapMe()
+    {
+        $names = collect([
+            'Albert', 'Ben', 'Charles', 'Dan', 'Eric', 'Xavier', 'Yuri', 'Zane'
+        ]);
+
+        $lengths = $names->map(function ($name, $key) {
+            return strlen($name);
+        });
+
+        $lengths->toArray();
+        //[6, 3, 7, 3, 4, 6, 4, 4,]
+    }
+
+    /**
+     * Transform perfoms an action on an original collection.
+     */
+    public function transformMe()
+    {
+        $names = collect([
+            'Albert', 'Ben', 'Charles', 'Dan', 'Eric', 'Xavier', 'Yuri', 'Zane'
+        ]);
+
+        $names->transform(function ($name, $key) {
+            return strlen($name);
+        });
+
+        $names->toArray();
+        //[6, 3, 7, 3, 4, 6, 4, 4,]
+    }
 }
