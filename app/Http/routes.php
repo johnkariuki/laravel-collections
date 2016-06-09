@@ -80,3 +80,8 @@ Route::get('/transform', [
     'uses' => 'TestController@transformMe',
     'as' => 'transform'
 ]);
+
+Route::get('/reduce', [
+    'uses' => 'TestController@reduceMe',
+    'as' => 'reduce'
+]);

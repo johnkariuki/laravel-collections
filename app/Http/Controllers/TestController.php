@@ -272,4 +272,19 @@ class TestController extends Controller
         $names->toArray();
         //[6, 3, 7, 3, 4, 6, 4, 4,]
     }
+
+    /**
+     * Get the sum of numbers in a collection
+     */
+    public function reduceMe()
+    {
+        $numbers = collect([
+            1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+        ]);
+
+        $sum = $numbers->reduce(function ($sum, $number) {
+            return $sum + $number;
+        });
+        //55
+    }
 }
