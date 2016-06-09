@@ -85,3 +85,8 @@ Route::get('/reduce', [
     'uses' => 'TestController@reduceMe',
     'as' => 'reduce'
 ]);
+
+Route::get('/union', [
+    'uses' => 'TestController@union',
+    'as' => 'union'
+]);

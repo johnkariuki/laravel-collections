@@ -287,4 +287,24 @@ class TestController extends Controller
         });
         //55
     }
+
+    /**
+     * add array values to a collection using union
+     */
+    public function union()
+    {
+        $coolPeople = collect([
+            1 => 'John', 2 => 'James', 3 => 'Jack'
+        ]);
+
+        $allCoolPeople = $coolPeople->union([
+            4 => 'Sarah', 1 => 'Susan', 5 =>'Seyi'
+        ]);
+        $allCoolPeople->all();
+        /*
+        [
+            1 => "John", 2 => "James", 3 => "Jack", 4 => "Sarah", 5 => "Seyi",
+       ]
+       */
+    }
 }
