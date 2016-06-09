@@ -50,3 +50,13 @@ Route::get('/filter', [
     'uses' => 'TestController@filter',
     'as' => 'filter'
 ]);
+
+Route::get('/sort', [
+    'uses' => 'TestController@sortData',
+    'as' => 'sort'
+]);
+
+Route::get('/grouping', [
+    'uses' => 'TestController@grouping',
+    'as' => 'grouping'
+]);
