@@ -212,7 +212,29 @@ class TestController extends Controller
 
         //Get the last two names
         $lastTwo = $list->take(-2);
-        dd($lastTwo->toArray());
         //['Yuri', 'Zane']
+    }
+
+    /**
+     * Chunk(n) returns smaller collections of sizes n each from the
+     * original collection.
+     */
+    public function chunkMe()
+    {
+        $list = collect([
+            'Albert', 'Ben', 'Charles', 'Dan', 'Eric', 'Xavier', 'Yuri', 'Zane'
+        ]);
+
+        $chunks = $list->chunk(3);
+        $chunks->toArray();
+        /*
+        [
+            ["Albert", "Ben", "Charles",],
+            [3 => "Dan", 4 => "Eric", 5 => "Xavier",],
+            [6 => "Yuri", 7 => "Zane",],
+        ]
+        */
+
+        return view('chunk', compact('list'));
     }
 }

@@ -65,3 +65,8 @@ Route::get('/takeme', [
     'uses' => 'TestController@takeMe',
     'as' => 'takeme'
 ]);
+
+Route::get('/chunk', [
+    'uses' => 'TestController@chunkMe',
+    'as' => 'chunk'
+]);
