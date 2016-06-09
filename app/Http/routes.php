@@ -86,6 +86,11 @@ Route::get('/reduce', [
     'as' => 'reduce'
 ]);
 
+Route::get('/each', [
+    'uses' => 'TestController@eachMethod',
+    'as' => 'each'
+]);
+
 Route::get('/union', [
     'uses' => 'TestController@union',
     'as' => 'union'

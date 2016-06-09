@@ -289,6 +289,22 @@ class TestController extends Controller
     }
 
     /**
+     * Print out a list of numbers that are lesser than or
+     * equal to five
+     */
+    public function eachMethod()
+    {
+        $numbers = collect([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+        $smallNumbers = $numbers->each(function ($num, $key) {
+            if ($num > 5) {
+                return false;
+            }
+            echo $num .", ";
+        });
+        //1, 2, 3, 4, 5,
+    }
+
+    /**
      * add array values to a collection using union
      */
     public function union()
